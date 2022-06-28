@@ -1,10 +1,4 @@
-/**
-* Template Name: Mentor - v4.7.0
-* Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-(function() {
+(myTest = function() {
   "use strict";
 
   /**
@@ -87,7 +81,7 @@
 
   /**
    * Testimonials slider
-   */
+  
   new Swiper('.testimonials-slider', {
     speed: 600,
     loop: true,
@@ -113,10 +107,10 @@
       }
     }
   });
-
+  */
   /**
    * Animation on scroll
-   */
+ 
   window.addEventListener('load', () => {
     AOS.init({
       duration: 1000,
@@ -125,5 +119,6 @@
       mirror: false
     })
   });
+  */
 
 })()
