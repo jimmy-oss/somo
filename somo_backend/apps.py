@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class StudentsConfig(AppConfig):
+class SomoBackendConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'students'
+    name = 'somo_backend'
