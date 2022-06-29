@@ -9,6 +9,10 @@ import { FooterComponent } from './sharepage/footer/footer.component';
 import { NavbarComponent } from './sharepage/navbar/navbar.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { CoursesComponent } from './pages/courses/courses.component';
+import { TrainersComponent } from './pages/trainers/trainers.component';
+import { EventsComponent } from './pages/events/events.component';
+import { PricingComponent } from './pages/pricing/pricing.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { SignupComponent } from './pages/signup/signup.component';
     FooterComponent,
     NavbarComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    CoursesComponent,
+    TrainersComponent,
+    EventsComponent,
+    PricingComponent
   ],
   imports: [
     BrowserModule,
