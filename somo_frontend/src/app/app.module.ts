@@ -11,7 +11,6 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { TrainersComponent } from './pages/trainers/trainers.component';
-import { EventsComponent } from './pages/events/events.component';
 import { PricingComponent } from './pages/pricing/pricing.component';
 
 @NgModule({
@@ -26,7 +25,6 @@ import { PricingComponent } from './pages/pricing/pricing.component';
     SignupComponent,
     CoursesComponent,
     TrainersComponent,
-    EventsComponent,
     PricingComponent
   ],
   imports: [

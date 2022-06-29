@@ -5,7 +5,6 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { TrainersComponent } from './pages/trainers/trainers.component';
-import { EventsComponent } from './pages/events/events.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 
@@ -15,7 +14,6 @@ const routes: Routes = [
   {path:'contact',component:ContactComponent},
   {path:'courses',component:CoursesComponent},
   {path:'trainers',component:TrainersComponent},
-  {path:'events',component:EventsComponent},
   {path:'signin',component:SigninComponent},
   {path:'signup',component:SignupComponent},
 ];
