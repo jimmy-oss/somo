@@ -11,7 +11,8 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { TrainersComponent } from './pages/trainers/trainers.component';
-import { PricingComponent } from './pages/pricing/pricing.component';
+import { AdminComponent } from './pages/admin/admin.component';
+ 
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { PricingComponent } from './pages/pricing/pricing.component';
     SignupComponent,
     CoursesComponent,
     TrainersComponent,
-    PricingComponent
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
