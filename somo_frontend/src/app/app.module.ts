@@ -12,6 +12,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { TrainersComponent } from './pages/trainers/trainers.component';
 import { AdminComponent } from './pages/admin/admin.component';
+import { ProfileComponent } from './pages/profile/profile.component';
  
 
 @NgModule({
@@ -27,6 +28,7 @@ import { AdminComponent } from './pages/admin/admin.component';
     CoursesComponent,
     TrainersComponent,
     AdminComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
