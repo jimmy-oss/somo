@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css','./animate.min.css','./swiper-bundle.min.css']
+ 
 })
 export class HomeComponent implements OnInit {
 
