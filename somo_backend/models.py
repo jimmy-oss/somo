@@ -40,3 +40,6 @@ class SubmitAssignment(models.Model):
     answer = models.TextField(null=False, blank=False)
     submitted_on = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
+
+    def __str__(self) -> str:
+        return self.assignment

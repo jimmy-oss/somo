@@ -10,4 +10,5 @@ urlpatterns = [
     path('subject/<int:pk>', SubjectsDescriptionView.as_view(), name='subject'),
     path('assignments/', AssignmentsView.as_view(), name='assignments'),
     path('assignment/<int:pk>', AssignmentsDescriptionView.as_view(), name='assignment'),
+    path('sub-assignments/', SubmitAssignmentsView.as_view(), name='submitted_assignments'),
 ]

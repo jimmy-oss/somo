@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.decorators import api_view
 from .models import Subject, Assignment, SubmitAssignment, CustomUser
-from .serializers import SubjectsSerializers, CustomUserSerlializer, AssignmentsSerializer
+from .serializers import SubjectsSerializers, CustomUserSerlializer, AssignmentsSerializer, SubmitAssignmentsSerializer
 from rest_framework.response import Response
 from django.contrib.auth import login, logout, authenticate
 from .forms import LoginUserForm
@@ -146,3 +146,23 @@ class AssignmentsDescriptionView(APIView):
         except Assignment.DoesNotExist:
             return Response('Assignment does not exist', status=status.HTTP_400_BAD_REQUEST)
 
+
+class SubmitAssignmentsView(APIView):
+    def get(self, request, format=None):
+        try:
+            all_submitted_assignments = SubmitAssignment.objects.all()
+            serializers = SubmitAssignmentsSerializer(all_submitted_assignments, many=True)
+            return Response(serializers.data, status=status.HTTP_200_OK)
+
+        except:
+            return Response('No submitted assignments found', status=status.HTTP_404_NOT_FOUND)
+
+    def post(self, request, format=None):
+        serializers  = SubmitAssignmentsSerializer(data=request.data)
+
+        if serializers.is_valid():
+            serializers.save()
+            return Response('Assignment submitted successfully', status=status.HTTP_201_CREATED)
+        
+        else:
+            return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
