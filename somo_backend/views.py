@@ -14,3 +14,15 @@ class SubjectsListView(APIView):
             return Response('0 subjects found', status=status.HTTP_204_NO_CONTENT)
         except:
             return Response(serializers, status=status.HTTP_400_BAD_REQUEST)
+
+
+    def post(self, request, format=None):
+        serializers  = SubjectsSerializers(data=request.data)
+
+        if serializers.is_valid():
+            serializers.save()
+            return Response(serializers.data, status=status.HTTP_201_CREATED)
+
+        return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        
