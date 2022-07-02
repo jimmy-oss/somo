@@ -7,7 +7,6 @@ from .serializers import SubjectsSerializers, CustomUserSerlializer, Assignments
 from rest_framework.response import Response
 from django.contrib.auth import login, logout, authenticate
 from .forms import LoginUserForm
-from somo_backend import serializers
 
 
 # class SignupView(APIView):
@@ -118,3 +117,12 @@ class AssignmentsView(APIView):
         
         else:
             return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class AssignmentsDescriptionView(APIView):
+    def get(self, request, pk, format=None):
+        try:
+            assignment = Assignment.objects.get(pk=pk)
+            serializers = AssignmentsSerializer(assignment)
+            return Response(serializers.data, status=status.HTTP_200_OK)
+        except:
+            return Response('Assignment not found', status=status.HTTP_404_NOT_FOUND)
