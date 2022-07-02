@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import CustomUser
+from .models import CustomUser, Subject
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.admin import UserAdmin
 from .forms import MyUserCreationForm, MyUserChangeForm
@@ -18,3 +18,6 @@ class UserAdmin(BaseUserAdmin):
     ordering = ('-email', )
 
 admin.site.register(CustomUser, UserAdmin)
+admin.site.register([
+    Subject
+])
