@@ -72,7 +72,7 @@ class SubjectsDescriptionView(APIView):
     def get(self, request, pk, format=None):
         try:
             subject = Subject.objects.get(pk=pk)
-            serializers = SubjectsSerializers(subject, many=True)
+            serializers = SubjectsSerializers(subject)
             return Response(serializers.data, status=status.HTTP_200_OK)
 
         except:
@@ -126,3 +126,14 @@ class AssignmentsDescriptionView(APIView):
             return Response(serializers.data, status=status.HTTP_200_OK)
         except:
             return Response('Assignment not found', status=status.HTTP_404_NOT_FOUND)
+
+    def put(self, request, pk, format=None):
+        assignment = Assignment.objects.get(pk=pk)
+
+        serializers  = AssignmentsSerializer(assignment, request.data)
+
+        if serializers.is_valid():
+            serializers.save()
+            return Response(serializers.data, status=status.HTTP_200_OK)
+
+        return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
