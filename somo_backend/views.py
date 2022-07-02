@@ -20,8 +20,13 @@ class SubjectsListView(APIView):
         serializers  = SubjectsSerializers(data=request.data)
 
         if serializers.is_valid():
-            serializers.save()
-            return Response(serializers.data, status=status.HTTP_201_CREATED)
+            check_if_exists = Subject.objects.get(name__iexact=request.data['name'])
+
+            if check_if_exists:
+                return Response('Subject already exists', status=status.HTTP_409_CONFLICT)
+            else:
+                serializers.save()
+                return Response('Subject added successfully', status=status.HTTP_201_CREATED)
 
         return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -35,3 +40,12 @@ class SubjectsListView(APIView):
             return Response(serializers.data, status=status.HTTP_200_OK)
 
         return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, pk, format=None):
+        try:
+            subject = Subject.objects.get(pk=pk)
+            if subject:
+                subject.delete()
+                return Response('Subject deleted successfully', status=status.HTTP_200_OK)
+        except Subject.DoesNotExist:
+            return Response('Subject does not exist', status=status.HTTP_400_BAD_REQUEST)
