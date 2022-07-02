@@ -98,3 +98,5 @@ class SubjectsDescriptionView(APIView):
                 return Response('Subject deleted successfully', status=status.HTTP_200_OK)
         except Subject.DoesNotExist:
             return Response('Subject does not exist', status=status.HTTP_400_BAD_REQUEST)
+
+

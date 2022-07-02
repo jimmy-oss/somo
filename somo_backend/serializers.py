@@ -11,3 +11,8 @@ class SubjectsSerializers(serializers.ModelSerializer):
     class Meta:
         model = Subject
         fields = '__all__'
+
+class AssignmentsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Assignment
+        fields = '__all__'
