@@ -134,6 +134,14 @@ class AssignmentsDescriptionView(APIView):
 
         if serializers.is_valid():
             serializers.save()
-            return Response(serializers.data, status=status.HTTP_200_OK)
+            return Response('Assignment updated successfully', status=status.HTTP_200_OK)
 
         return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, pk, format=None):
+        try:
+            assignment = Assignment.objects.get(pk=pk)
+            assignment.delete()
+            return Response('Assignment deleted successfully', status=status.HTTP_200_OK)
+        except Assignment.DoesNotExist:
+            return Response('Assignment does not exist', status=status.HTTP_400_BAD_REQUEST)
