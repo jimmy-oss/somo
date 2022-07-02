@@ -2,8 +2,26 @@ from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.decorators import api_view
 from .models import Subject, Assignment, SubmitAssignment, CustomUser
-from .serializers import SubjectsSerializers
+from .serializers import SubjectsSerializers, CustomUserSerlializer
 from rest_framework.response import Response
+
+
+class SignupView(APIView):
+    def post(self, request, format=None):
+        serializers = CustomUserSerlializer(data=request.data)
+
+        if serializers.is_valid():
+            check_if_user_exists = CustomUser.objects.filter(email=request.data['email']).exists()
+
+            if check_if_user_exists:
+                return Response('User already exists', status=status.HTTP_409_CONFLICT)
+            else:
+                serializers.save()
+                return Response('User created successfully', status=status.HTTP_201_CREATED)
+        
+        return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
 
 class SubjectsListView(APIView):
     def get(self, request, format=None):
