@@ -166,3 +166,31 @@ class SubmitAssignmentsView(APIView):
         
         else:
             return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class SubmitAssignmentsDetailView(APIView):
+    def get(self, request, pk, format=None):
+        try:
+            submitted_assignment = SubmitAssignment.objects.get(pk=pk)
+            serializers = SubmitAssignmentsSerializer(submitted_assignment)
+            return Response(serializers.data, status=status.HTTP_200_OK)
+        except:
+            return Response('Submitted assignment not found', status=status.HTTP_404_NOT_FOUND)
+
+    def put(self, request, pk, format=None):
+        submitted_assignment = SubmitAssignment.objects.get(pk=pk)
+
+        serializers  = SubmitAssignmentsSerializer(submitted_assignment, request.data)
+
+        if serializers.is_valid():
+            serializers.save()
+            return Response('Submitted assignment updated successfully', status=status.HTTP_200_OK)
+
+        return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, pk, format=None):
+        try:
+            submitted_assignment = SubmitAssignment.objects.get(pk=pk)
+            submitted_assignment.delete()
+            return Response('Submitted assignment deleted successfully', status=status.HTTP_200_OK)
+        except Assignment.DoesNotExist:
+            return Response('Submitted assignment does not exist', status=status.HTTP_400_BAD_REQUEST)
