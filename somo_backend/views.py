@@ -1,3 +1,4 @@
+from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -6,6 +7,7 @@ from .serializers import SubjectsSerializers, CustomUserSerlializer
 from rest_framework.response import Response
 from django.contrib.auth import login, logout, authenticate
 from .forms import LoginUserForm
+from somo_backend import serializers
 
 
 # class SignupView(APIView):
@@ -49,7 +51,7 @@ class SubjectsListView(APIView):
                 serializers = SubjectsSerializers(all_subjects, many=True)
                 return Response(serializers.data, status=status.HTTP_200_OK)
 
-            return Response('0 subjects found', status=status.HTTP_204_NO_CONTENT)
+            return Response('0 subjects found', status=status.HTTP_404_NOT_FOUND)
         except:
             return Response(serializers, status=status.HTTP_400_BAD_REQUEST)
 
@@ -87,3 +89,31 @@ class SubjectsListView(APIView):
                 return Response('Subject deleted successfully', status=status.HTTP_200_OK)
         except Subject.DoesNotExist:
             return Response('Subject does not exist', status=status.HTTP_400_BAD_REQUEST)
+
+
+class SubjectDescriptionView(APIView):
+    def get(self, request, pk, format=None):
+        try:
+            subject = Subject.objects.get(pk=pk)
+
+            if subject:
+                serializers = SubjectsSerializers(subject)
+                return Response(serializers.data, status=status.HTTP_200_OK)
+        except:
+            return Response('Subject not found', status=status.HTTP_404_NOT_FOUND)
+
+    def put(self, request, pk, format=None):
+        try:
+            subject = Subject.objects.get(pk=pk)
+
+            if subject: 
+                serializers = SubjectsSerializers(subject, request.data)
+
+                if serializers.is_valid():
+                    serializers.save()
+                    return Response('Subject updated successfully', status=status.HTTP_204_NO_CONTENT)
+
+                else:
+                    return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
+        except:
+            return Response('Subject not found', status=status.HTTP_404_NOT_FOUND)
