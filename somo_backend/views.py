@@ -25,4 +25,13 @@ class SubjectsListView(APIView):
 
         return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        
+    def put(self, request, pk, format=None):
+        subject = Subject.objects.get(pk=pk)
+
+        serializers  = SubjectsSerializers(subject, request.data)
+
+        if serializers.is_valid():
+            serializers.save()
+            return Response(serializers.data, status=status.HTTP_200_OK)
+
+        return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
