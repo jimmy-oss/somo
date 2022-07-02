@@ -6,7 +6,6 @@ from rest_framework.authtoken import views
 urlpatterns = [
     path('token-auth/', views.obtain_auth_token),
     # path('signup/', SignupView.as_view(), name='signup'),
-    path('subject/<int:pk>', SubjectDescriptionView.as_view(), name='subject'),
-    path('subjects/', SubjectsListView.as_view(), name='subjects'),
-    path('subjects/<int:pk>', SubjectsListView.as_view(), name='update_subject')
+    path('subjects/', SubjectsView.as_view(), name='subjects'),
+    path('subject/<int:pk>', SubjectsDescriptionView.as_view(), name='subject')
 ]

@@ -43,32 +43,41 @@ from somo_backend import serializers
 
 #         return Response('Invalid username, password or email', status=status.HTTP_401_UNAUTHORIZED)
 
-class SubjectsListView(APIView):
+class SubjectsView(APIView):
     def get(self, request, format=None):
         try:
             all_subjects = Subject.objects.all()
-            if all_subjects:
-                serializers = SubjectsSerializers(all_subjects, many=True)
-                return Response(serializers.data, status=status.HTTP_200_OK)
+            serializers = SubjectsSerializers(all_subjects, many=True)
+            return Response(serializers.data, status=status.HTTP_200_OK)
 
-            return Response('0 subjects found', status=status.HTTP_404_NOT_FOUND)
         except:
-            return Response(serializers, status=status.HTTP_400_BAD_REQUEST)
-
+            return Response('No subjects found', status=status.HTTP_404_NOT_FOUND)
 
     def post(self, request, format=None):
         serializers  = SubjectsSerializers(data=request.data)
 
         if serializers.is_valid():
-            check_if_exists = Subject.objects.get(name__iexact=request.data['name'])
+            check_if_subject_exists = Subject.objects.filter(name__iexact=request.data['name'])
 
-            if check_if_exists:
-                return Response('Subject already exists', status=status.HTTP_409_CONFLICT)
-            else:
+            if not check_if_subject_exists:
                 serializers.save()
                 return Response('Subject added successfully', status=status.HTTP_201_CREATED)
+            else:
+                return Response('Subject already exists', status=status.HTTP_409_CONFLICT)
+        
+        else:
+            return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class SubjectsDescriptionView(APIView):
+    def get(self, request, pk, format=None):
+        try:
+            subject = Subject.objects.get(pk=pk)
+            serializers = SubjectsSerializers(subject, many=True)
+            return Response(serializers.data, status=status.HTTP_200_OK)
+
+        except:
+            return Response('Subject not found', status=status.HTTP_404_NOT_FOUND)
 
     def put(self, request, pk, format=None):
         subject = Subject.objects.get(pk=pk)
@@ -89,31 +98,3 @@ class SubjectsListView(APIView):
                 return Response('Subject deleted successfully', status=status.HTTP_200_OK)
         except Subject.DoesNotExist:
             return Response('Subject does not exist', status=status.HTTP_400_BAD_REQUEST)
-
-
-class SubjectDescriptionView(APIView):
-    def get(self, request, pk, format=None):
-        try:
-            subject = Subject.objects.get(pk=pk)
-
-            if subject:
-                serializers = SubjectsSerializers(subject)
-                return Response(serializers.data, status=status.HTTP_200_OK)
-        except:
-            return Response('Subject not found', status=status.HTTP_404_NOT_FOUND)
-
-    def put(self, request, pk, format=None):
-        try:
-            subject = Subject.objects.get(pk=pk)
-
-            if subject: 
-                serializers = SubjectsSerializers(subject, request.data)
-
-                if serializers.is_valid():
-                    serializers.save()
-                    return Response('Subject updated successfully', status=status.HTTP_204_NO_CONTENT)
-
-                else:
-                    return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
-        except:
-            return Response('Subject not found', status=status.HTTP_404_NOT_FOUND)
