@@ -1,11 +1,9 @@
-from django.urls import path
+from django.urls import path, include
 from .views import *
-from rest_framework.authtoken import views
 
 
 urlpatterns = [
-    path('token-auth/', views.obtain_auth_token),
-    # path('signup/', SignupView.as_view(), name='signup'),
+    path('accounts/', include('rest_registration.api.urls')),
     path('subjects/', SubjectsView.as_view(), name='subjects'),
     path('subjects/<int:pk>', SubjectsDescriptionView.as_view(), name='subject'),
     path('assignments/', AssignmentsView.as_view(), name='assignments'),

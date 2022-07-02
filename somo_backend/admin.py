@@ -5,8 +5,6 @@ from django.contrib.auth.admin import UserAdmin
 from .forms import MyUserCreationForm, MyUserChangeForm
 
 class UserAdmin(BaseUserAdmin):
-    form = MyUserChangeForm
-    add_form = MyUserCreationForm
     model = CustomUser
 
     fieldsets = UserAdmin.fieldsets + (

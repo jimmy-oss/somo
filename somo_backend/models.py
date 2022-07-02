@@ -11,10 +11,7 @@ CATEGORIES = (
 class CustomUser(AbstractUser):
     email = models.EmailField(_('email address'), unique = True)
     category = models.CharField(choices=CATEGORIES, max_length=7, null=False, blank=False, default='student')
-    location = models.CharField(max_length=30, null=False, blank=True)
-    is_active = models.BooleanField(default=True)
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username','first_name', 'last_name', 'category']
+    location = models.CharField(max_length=30, null=False, blank=True, default='unknown')
 
 class Subject(models.Model):
     name = models.CharField(max_length=50, null=False, blank=False)
@@ -42,4 +39,4 @@ class SubmitAssignment(models.Model):
     user = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
 
     def __str__(self) -> str:
-        return self.assignment
+        return self.answer
