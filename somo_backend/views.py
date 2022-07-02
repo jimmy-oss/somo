@@ -1,8 +1,10 @@
 from rest_framework.views import APIView
 from rest_framework import status
-from .models import Subject, Assignment, SubmitAssignment
+from rest_framework.decorators import api_view
+from .models import Subject, Assignment, SubmitAssignment, CustomUser
 from .serializers import SubjectsSerializers
 from rest_framework.response import Response
+
 class SubjectsListView(APIView):
     def get(self, request, format=None):
         try:
