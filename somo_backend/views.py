@@ -145,3 +145,4 @@ class AssignmentsDescriptionView(APIView):
             return Response('Assignment deleted successfully', status=status.HTTP_200_OK)
         except Assignment.DoesNotExist:
             return Response('Assignment does not exist', status=status.HTTP_400_BAD_REQUEST)
+

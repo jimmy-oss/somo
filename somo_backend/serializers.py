@@ -16,3 +16,8 @@ class AssignmentsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Assignment
         fields = '__all__'
+
+class SubmitAssignmentsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SubmitAssignment
+        fields = '__all__'
