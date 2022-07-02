@@ -104,7 +104,17 @@ class AssignmentsView(APIView):
     def get(self, request, format=None):
         try:
             all_assignments = Assignment.objects.all()
-            serializers = AssignmentsSerializer(all_assignments)
+            serializers = AssignmentsSerializer(all_assignments, many=True)
             return Response(serializers.data, status=status.HTTP_200_OK)
         except:
             return Response('No assignments found', status=status.HTTP_404_NOT_FOUND)
+
+    def post(self, request, format=None):
+        serializers  = AssignmentsSerializer(data=request.data)
+
+        if serializers.is_valid():
+            serializers.save()
+            return Response('Assignment added successfully', status=status.HTTP_201_CREATED)
+        
+        else:
+            return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
