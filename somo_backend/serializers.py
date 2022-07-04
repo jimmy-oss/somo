@@ -1,13 +1,11 @@
 from rest_framework import serializers
-from allauth.account.adapter import get_adapter
 from dj_rest_auth.registration.serializers import RegisterSerializer
 from rest_framework import serializers
-from rest_framework.authtoken.models import Token
 
 from .models import Subject, Assignment, SubmitAssignment, Trainer, Student
 
 class TrainerCustomRegistrationSerializer(RegisterSerializer):
-    trainer = serializers.PrimaryKeyRelatedField(read_only=True,) #by default allow_null = False
+    trainer = serializers.PrimaryKeyRelatedField(read_only=True,)
     location = serializers.CharField(required=True)
     bio = serializers.CharField(required=True)
     

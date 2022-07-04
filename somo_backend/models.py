@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from django.utils.translation import gettext_lazy as _
 from django.conf import settings
-
 
 class CustomUser(AbstractUser):
   #Boolean fields to select the type of account.
@@ -48,8 +46,8 @@ class Assignment(models.Model):
 
 
 class SubmitAssignment(models.Model):
-    assignment = models.ForeignKey(Assignment, on_delete=models.CASCADE)
     student = models.ForeignKey(Student,on_delete=models.CASCADE)
+    assignment = models.ForeignKey(Assignment, on_delete=models.CASCADE)
     submitted_on = models.DateTimeField(auto_now_add=True)
     answer = models.TextField(null=False, blank=False)
 
