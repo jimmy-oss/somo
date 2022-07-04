@@ -10,8 +10,6 @@ class CustomUser(AbstractUser):
 class Trainer(models.Model):
     trainer = models.OneToOneField(
       settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True)
-    location = models.CharField(max_length=30)
-    bio = models.TextField()
 
     def __str__(self):
         return self.trainer.username
@@ -19,8 +17,6 @@ class Trainer(models.Model):
 class Student(models.Model):
     student = models.OneToOneField(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    location = models.CharField(max_length=30)
-    bio = models.TextField()
 
     def __str__(self):
         return self.student.username

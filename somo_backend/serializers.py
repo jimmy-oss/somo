@@ -6,48 +6,24 @@ from .models import Subject, Assignment, SubmitAssignment, Trainer, Student
 
 class TrainerCustomRegistrationSerializer(RegisterSerializer):
     trainer = serializers.PrimaryKeyRelatedField(read_only=True,)
-    location = serializers.CharField(required=True)
-    bio = serializers.CharField(required=True)
-    
-    def get_cleaned_data(self):
-            data = super(TrainerCustomRegistrationSerializer, self).get_cleaned_data()
-            extra_data = {
-                'location' : self.validated_data.get('location', ''),
-                'bio' : self.validated_data.get('bio', ''),
-            }
-            data.update(extra_data)
-            return data
 
     def save(self, request):
         user = super(TrainerCustomRegistrationSerializer, self).save(request)
         user.is_trainer = True
         user.save()
-        trainer = Trainer(trainer=user, location=self.cleaned_data.get('location'), 
-                bio=self.cleaned_data.get('bio'))
+        trainer = Trainer(trainer=user, )
         trainer.save()
         return user
 
 
 class StudentCustomRegistrationSerializer(RegisterSerializer):
     student = serializers.PrimaryKeyRelatedField(read_only=True,) #by default allow_null = False
-    location = serializers.CharField(required=True)
-    bio = serializers.CharField(required=True)
-    
-    def get_cleaned_data(self):
-            data = super(StudentCustomRegistrationSerializer, self).get_cleaned_data()
-            extra_data = {
-                'location' : self.validated_data.get('location', ''),
-                'bio' : self.validated_data.get('bio', ''),
-            }
-            data.update(extra_data)
-            return data
 
     def save(self, request):
         user = super(StudentCustomRegistrationSerializer, self).save(request)
         user.is_student = True
         user.save()
-        student = Student(student=user,location=self.cleaned_data.get('location'),
-                            bio=self.cleaned_data.get('bio'))
+        student = Student(student=user, )
         student.save()
         return user
 class SubjectsSerializers(serializers.ModelSerializer):
