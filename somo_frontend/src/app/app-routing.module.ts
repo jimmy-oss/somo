@@ -9,8 +9,7 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { StudentProfileComponent } from './pages/student-profile/student-profile.component';
-import { TraninerProfileComponent } from './pages/traniner-profile/traniner-profile.component';
-
+import { TrainerProfileComponent } from './pages/trainer-profile/trainer-profile.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -22,7 +21,8 @@ const routes: Routes = [
   {path:'signup',component:SignupComponent},
   {path:'admin',component:AdminComponent},
   {path:'student-profile', component:StudentProfileComponent},
-  {path:'trainer-profile', component:TraninerProfileComponent},
+  {path:'trainer-profile', component:TrainerProfileComponent }
+  
  
 ];
 

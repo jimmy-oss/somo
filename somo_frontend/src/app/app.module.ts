@@ -13,7 +13,8 @@ import { CoursesComponent } from './pages/courses/courses.component';
 import { TrainersComponent } from './pages/trainers/trainers.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { StudentProfileComponent } from './pages/student-profile/student-profile.component';
-import { TraninerProfileComponent } from './pages/traniner-profile/traniner-profile.component';
+import { TrainerProfileComponent } from './pages/trainer-profile/trainer-profile.component';
+
 
  
 
@@ -31,7 +32,9 @@ import { TraninerProfileComponent } from './pages/traniner-profile/traniner-prof
     TrainersComponent,
     AdminComponent,
     StudentProfileComponent,
-    TraninerProfileComponent,
+    TrainerProfileComponent,
+   
+   
    
   ],
   imports: [
