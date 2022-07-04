@@ -108,3 +108,12 @@
 #inputPhone{
   width:100%
 }
+
+img{
+  /* width: 130px;
+  height: 130px; */
+  object-fit: cover;
+  margin: 10px auto;
+  border: 7px solid #F1F2F3;
+  border-radius: 50%
+}
