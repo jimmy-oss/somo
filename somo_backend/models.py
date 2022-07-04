@@ -37,11 +37,11 @@ class Subject(models.Model):
 
 class Assignment(models.Model):
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
+    trainer = models.ForeignKey(Trainer, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=150, null=False, blank=False)
     description = models.TextField(null=False, blank=False)
     deadline = models.DateTimeField(null=True, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    user = models.ForeignKey(Trainer, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return self.title
@@ -49,9 +49,9 @@ class Assignment(models.Model):
 
 class SubmitAssignment(models.Model):
     assignment = models.ForeignKey(Assignment, on_delete=models.CASCADE)
-    answer = models.TextField(null=False, blank=False)
+    student = models.ForeignKey(Student,on_delete=models.CASCADE)
     submitted_on = models.DateTimeField(auto_now_add=True)
-    user = models.ForeignKey(Student,on_delete=models.CASCADE)
+    answer = models.TextField(null=False, blank=False)
 
     def __str__(self) -> str:
         return self.answer
