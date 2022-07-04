@@ -12,6 +12,9 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { TrainersComponent } from './pages/trainers/trainers.component';
 import { AdminComponent } from './pages/admin/admin.component';
+import { StudentDashboardComponent } from './pages/student-dashboard/student-dashboard.component';
+import { TrainerDashboardComponent } from './pages/trainer-dashboard/trainer-dashboard.component';
+import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
  
 
 @NgModule({
@@ -27,6 +30,9 @@ import { AdminComponent } from './pages/admin/admin.component';
     CoursesComponent,
     TrainersComponent,
     AdminComponent,
+    StudentDashboardComponent,
+    TrainerDashboardComponent,
+    AdminDashboardComponent,
   ],
   imports: [
     BrowserModule,
