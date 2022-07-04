@@ -1,9 +1,16 @@
 from rest_framework.views import APIView
 from rest_framework import status
 from .models import Subject, Assignment, SubmitAssignment
-from .serializers import SubjectsSerializers, AssignmentsSerializer, SubmitAssignmentsSerializer
+from .serializers import SubjectsSerializers, AssignmentsSerializer, SubmitAssignmentsSerializer, TrainerCustomRegistrationSerializer, StudentCustomRegistrationSerializer
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+from dj_rest_auth.registration.views import RegisterView
+
+class TrainerRegistrationView(RegisterView):
+    serializer_class = TrainerCustomRegistrationSerializer
+
+class StudentRegistrationView(RegisterView):
+    serializer_class = StudentCustomRegistrationSerializer
 
 class SubjectsView(APIView):
     permission_classes = [IsAuthenticated]
