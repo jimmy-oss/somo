@@ -17,6 +17,8 @@ import { TrainerProfileComponent } from './pages/trainer-profile/trainer-profile
 import { TrainersComponent } from './pages/trainers/trainers.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { LoginComponent } from './pages/login/login.component';
+import { TrainerRegistrationComponent } from './pages/trainer-registration/trainer-registration.component';
+import { TrainerLoginComponent } from './pages/trainer-login/trainer-login.component';
  
 
 @NgModule({
@@ -36,6 +38,8 @@ import { LoginComponent } from './pages/login/login.component';
     TrainersComponent,
     RegistrationComponent,
     LoginComponent,
+    TrainerRegistrationComponent,
+    TrainerLoginComponent,
   ],
   imports: [
     BrowserModule,
