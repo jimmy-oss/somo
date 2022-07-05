@@ -5,8 +5,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { TrainersComponent } from './pages/trainers/trainers.component';
-import { SigninComponent } from './pages/signin/signin.component';
-import { SignupComponent } from './pages/signup/signup.component';
+import { RegistrationComponent } from './pages/registration/registration.component';
+import { LoginComponent } from './pages/login/login.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import {StudentProfileComponent} from './pages/student-profile/student-profile.component';
 import { TrainerProfileComponent } from './pages/trainer-profile/trainer-profile.component';
@@ -20,8 +20,8 @@ const routes: Routes = [
   {path:'contact',component:ContactComponent},
   {path:'courses',component:CoursesComponent},
   {path:'trainers',component:TrainersComponent},
-  {path:'signin',component:SigninComponent},
-  {path:'signup',component:SignupComponent},
+  {path:'registration',component:RegistrationComponent},
+  {path:'login',component:LoginComponent},
   {path:'admin',component:AdminComponent},
   {path:'student-profile',component:StudentProfileComponent},
   {path:'trainer-profile',component:TrainerProfileComponent},

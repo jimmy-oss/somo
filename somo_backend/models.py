@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.conf import settings
 
+ 
 class CustomUser(AbstractUser):
   #Boolean fields to select the type of account.
   is_trainer = models.BooleanField(default=False)

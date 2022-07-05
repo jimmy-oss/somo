@@ -10,13 +10,13 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { HomeComponent } from './pages/home/home.component';
-import { SigninComponent } from './pages/signin/signin.component';
-import { SignupComponent } from './pages/signup/signup.component';
 import { StudentDashboardComponent } from './pages/student-dashboard/student-dashboard.component';
 import { StudentProfileComponent } from './pages/student-profile/student-profile.component';
 import { TrainerDashboardComponent } from './pages/trainer-dashboard/trainer-dashboard.component';
 import { TrainerProfileComponent } from './pages/trainer-profile/trainer-profile.component';
 import { TrainersComponent } from './pages/trainers/trainers.component';
+import { RegistrationComponent } from './pages/registration/registration.component';
+import { LoginComponent } from './pages/login/login.component';
  
 
 @NgModule({
@@ -29,13 +29,13 @@ import { TrainersComponent } from './pages/trainers/trainers.component';
     ContactComponent,
     CoursesComponent,
     HomeComponent,
-    SigninComponent,
-    SignupComponent,
     StudentDashboardComponent,
     StudentProfileComponent,
     TrainerDashboardComponent,
     TrainerProfileComponent,
     TrainersComponent,
+    RegistrationComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
