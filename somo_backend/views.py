@@ -1,7 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework import status
-from .models import Subject, Assignment, SubmitAssignment
-from .serializers import SubjectsSerializers, AssignmentsSerializer, SubmitAssignmentsSerializer, TrainerCustomRegistrationSerializer, StudentCustomRegistrationSerializer
+from .models import Subject, Assignment, SubmitAssignment, Trainer, Student
+from .serializers import StudentsSerializers, SubjectsSerializers, AssignmentsSerializer, SubmitAssignmentsSerializer, TrainerCustomRegistrationSerializer, StudentCustomRegistrationSerializer, TrainersSerializers
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from dj_rest_auth.registration.views import RegisterView
@@ -11,6 +11,30 @@ class TrainerRegistrationView(RegisterView):
 
 class StudentRegistrationView(RegisterView):
     serializer_class = StudentCustomRegistrationSerializer
+
+class TrainersView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, format=None):
+        try:
+            all_trainers = Trainer.objects.all()
+            serializers = TrainersSerializers(all_trainers, many=True)
+            return Response(serializers.data, status=status.HTTP_200_OK)
+
+        except:
+            return Response('No trainers found', status=status.HTTP_404_NOT_FOUND)
+
+class StudentsView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, format=None):
+        try:
+            all_students = Student.objects.all()
+            serializers = StudentsSerializers(all_students, many=True)
+            return Response(serializers.data, status=status.HTTP_200_OK)
+
+        except:
+            return Response('No students found', status=status.HTTP_404_NOT_FOUND)
 
 class SubjectsView(APIView):
     permission_classes = [IsAuthenticated]

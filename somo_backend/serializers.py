@@ -40,3 +40,13 @@ class SubmitAssignmentsSerializer(serializers.ModelSerializer):
     class Meta:
         model = SubmitAssignment
         fields = '__all__'
+
+class TrainersSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Trainer
+        fields = '__all__'
+
+class StudentsSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Student
+        fields = '__all__'
