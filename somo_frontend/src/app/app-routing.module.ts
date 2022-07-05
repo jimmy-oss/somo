@@ -11,6 +11,7 @@ import { AdminComponent } from './pages/admin/admin.component';
 import {StudentProfileComponent} from './pages/student-profile/student-profile.component';
 import { TrainerProfileComponent } from './pages/trainer-profile/trainer-profile.component';
 import { StudentDashboardComponent } from './pages/student-dashboard/student-dashboard.component';
+import { TrainerDashboardComponent } from './pages/trainer-dashboard/trainer-dashboard.component';
  
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path:'student-profile',component:StudentProfileComponent},
   {path:'trainer-profile',component:TrainerProfileComponent},
   {path:'student-dashboard',component:StudentDashboardComponent},
+  {path:'trainer-dashboard',component:TrainerDashboardComponent},
 ];
 
 @NgModule({
