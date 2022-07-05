@@ -10,6 +10,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import {StudentProfileComponent} from './pages/student-profile/student-profile.component';
 import { TrainerProfileComponent } from './pages/trainer-profile/trainer-profile.component';
+import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -22,6 +23,8 @@ const routes: Routes = [
   {path:'admin',component:AdminComponent},
   {path:'student-profile',component:StudentProfileComponent},
   {path:'trainer-profile',component:TrainerProfileComponent},
+  {path:'admin-dashboard',component:AdminDashboardComponent},
+
 ];
 
 @NgModule({
