@@ -14,6 +14,8 @@ import { StudentDashboardComponent } from './pages/student-dashboard/student-das
 import { TrainerDashboardComponent } from './pages/trainer-dashboard/trainer-dashboard.component';
 import { TrainerLoginComponent } from './pages/trainer-login/trainer-login.component';
 import { TrainerRegistrationComponent } from './pages/trainer-registration/trainer-registration.component';
+import { StudentQuizComponent } from './pages/student-quiz/student-quiz.component';
+import { StudentResultsComponent } from './pages/student-results/student-results.component';
  
 
 const routes: Routes = [
@@ -31,6 +33,8 @@ const routes: Routes = [
   {path:'trainer-dashboard',component:TrainerDashboardComponent},
   {path:'trainer-login',component:TrainerLoginComponent},
   {path:'trainer-registration',component:TrainerRegistrationComponent},
+  {path:'student-quiz',component:StudentQuizComponent},
+  {path:'student-result',component:StudentResultsComponent},
 ];
 
 @NgModule({

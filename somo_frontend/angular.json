@@ -29,7 +29,13 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/aos.js",
+              "src/assets/js/bootstrap.bundle.min.js",
+              "src/assets/js/purecounter.js",
+              "src/assets/js/swiper-bundle.min.js"
+
+            ]
           },
           "configurations": {
             "production": {
@@ -102,5 +108,7 @@
       }
     }
   },
-  "defaultProject": "somo_frontend"
+  "cli": {
+    "analytics": "38df75b5-1593-4e40-bf3e-25dafcb510e8"
+  }
 }

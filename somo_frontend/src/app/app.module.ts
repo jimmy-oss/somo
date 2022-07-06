@@ -19,6 +19,9 @@ import { RegistrationComponent } from './pages/registration/registration.compone
 import { LoginComponent } from './pages/login/login.component';
 import { TrainerRegistrationComponent } from './pages/trainer-registration/trainer-registration.component';
 import { TrainerLoginComponent } from './pages/trainer-login/trainer-login.component';
+import { StudentQuizComponent } from './pages/student-quiz/student-quiz.component';
+import { StudentResultsComponent } from './pages/student-results/student-results.component';
+ 
  
 
 @NgModule({
@@ -40,10 +43,13 @@ import { TrainerLoginComponent } from './pages/trainer-login/trainer-login.compo
     LoginComponent,
     TrainerRegistrationComponent,
     TrainerLoginComponent,
+    StudentQuizComponent,
+    StudentResultsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]
