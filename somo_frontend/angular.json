@@ -33,7 +33,8 @@
               "src/assets/js/aos.js",
               "src/assets/js/bootstrap.bundle.min.js",
               "src/assets/js/purecounter.js",
-              "src/assets/js/swiper-bundle.min.js"
+              "src/assets/js/swiper-bundle.min.js",
+              "src/assets/js/main.js"
 
             ]
           },
