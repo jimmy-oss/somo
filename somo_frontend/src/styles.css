@@ -1,16 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
-*
-{
-    padding: 0;
-    margin: 0;
+@import 'aos/dist/aos.css';
+@import "./assets/vendor/animate.css/animate.min.css";
+ @import "./assets/vendor/aos/aos.css";
+ @import "./assets/vendor/bootstrap/css/bootstrap.min.css";
+ @import "./assets/vendor/bootstrap-icons/bootstrap-icons.css";
+ @import "./assets/vendor/boxicons/css/boxicons.min.css";
+ @import "./assets/vendor/remixicon/remixicon.css";
+ @import "./assets/vendor/swiper/swiper-bundle.min.css";
+ /*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #fff;
 }
-:root
-{
-    --primary-color:#3FC060;
-    --secondary-color:#162328;
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #5fcf80;
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: animate-preloader 1s linear infinite;
+  animation: animate-preloader 1s linear infinite;
 }
-body
-{
-    height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
+
+@-webkit-keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
