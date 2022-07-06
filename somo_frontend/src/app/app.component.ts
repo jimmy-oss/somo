@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import * as AOS from 'aos';
+
  
  
  
@@ -28,6 +29,8 @@ export class AppComponent {
      preloader = this.remove()
     
       });
+      
+      
     }
   }
 }
