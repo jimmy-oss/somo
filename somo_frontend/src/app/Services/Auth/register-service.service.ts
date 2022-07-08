@@ -7,7 +7,7 @@ import { new_trainer } from 'src/app/interfaces/interfaces';
 })
 export class RegisterServiceService {
 
-  BASE_URL: string = 'http://localhost:8000/api/register/trainer/'
+  BASE_URL: string = 'http://localhost:8000/api/registration/trainer/'
 
   constructor(private http: HttpClient) { }
 
