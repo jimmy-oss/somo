@@ -1,3 +1,4 @@
+ 
 (function() {
   "use strict";
 
@@ -72,17 +73,17 @@
   /**
    * Preloader
    */
-   let preloader = select('#preloader');
-   if (preloader) {
-     window.addEventListener('load', () => {
-       preloader.remove()
-     });
-   }
+  let preloader = select('#preloader');
+  if (preloader) {
+    window.addEventListener('load', () => {
+      preloader.remove()
+    });
+  }
 
   /**
    * Testimonials slider
-  
-  new Swiper('.testimonial-slider', {
+   */
+  new Swiper('.testimonials-slider', {
     speed: 600,
     loop: true,
     autoplay: {
@@ -110,7 +111,7 @@
 
   /**
    * Animation on scroll
-   
+   */
   window.addEventListener('load', () => {
     AOS.init({
       duration: 1000,
@@ -119,6 +120,5 @@
       mirror: false
     })
   });
-  */
 
 })()
