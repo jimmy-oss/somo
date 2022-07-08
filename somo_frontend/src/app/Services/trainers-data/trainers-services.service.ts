@@ -12,7 +12,7 @@ export class TrainersServicesService {
 
   key: any = window.localStorage.getItem("user")
 
-  getStudents(): any {
+  getTrainers(): any {
     if (this.key) {
       const users_key = JSON.parse(this.key).key
 
