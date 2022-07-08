@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
@@ -12,7 +14,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { TrainersComponent } from './pages/trainers/trainers.component';
 import { AdminComponent } from './pages/admin/admin.component';
- 
+import { RegisterServiceService } from './Services/Auth/register-service.service';
 
 @NgModule({
   declarations: [
@@ -30,9 +32,10 @@ import { AdminComponent } from './pages/admin/admin.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [RegisterServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
