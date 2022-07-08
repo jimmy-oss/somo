@@ -33,27 +33,20 @@ class StudentCustomRegistrationSerializer(RegisterSerializer):
         return user
 
 class AssignmentsSerializer(serializers.ModelSerializer):
-    subject = serializers.SerializerMethodField()
-    trainer = serializers.SerializerMethodField()
+    subject = serializers.CharField(source='subject.name', read_only=True)
+    trainer = serializers.CharField(source='trainer.trainer.username')
     class Meta:
         model = Assignment
         fields = '__all__'
-    
-    def get_subject(self, obj):
-        return obj.subject.name
 
-    def get_trainer(self, obj):
-        return obj.trainer.trainer.username
 
 
 class SubjectsSerializers(serializers.ModelSerializer):
-    trainer = serializers.SerializerMethodField()
+    trainer = serializers.CharField(source='trainer.trainer.username')
+    assignments = AssignmentsSerializer(source='subject_assignments', many=True)
     class Meta:
         model = Subject
-        fields = "__all__"
-
-    def get_trainer(self, obj):
-        return obj.trainer.trainer.username
+        fields = ('id', 'name', 'description','trainer', 'created_at','assignments', )
 
 class SubmitAssignmentsSerializer(serializers.ModelSerializer):
     class Meta:
@@ -62,9 +55,10 @@ class SubmitAssignmentsSerializer(serializers.ModelSerializer):
 
 class TrainersSerializers(serializers.ModelSerializer):
     trainer = CustomUserSerializer(read_only=True)
+    assignments = serializers.PrimaryKeyRelatedField(many=True, read_only=False, queryset=Subject.objects.all())
     class Meta:
         model = Trainer
-        fields = ("id", "trainer",)
+        fields = ("id", "trainer", "assignments")
 
 class StudentsSerializers(serializers.ModelSerializer):
     student = CustomUserSerializer(read_only=True)
