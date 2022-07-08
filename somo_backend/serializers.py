@@ -55,10 +55,9 @@ class SubmitAssignmentsSerializer(serializers.ModelSerializer):
 
 class TrainersSerializers(serializers.ModelSerializer):
     trainer = CustomUserSerializer(read_only=True)
-    assignments = serializers.PrimaryKeyRelatedField(many=True, read_only=False, queryset=Subject.objects.all())
     class Meta:
         model = Trainer
-        fields = ("id", "trainer", "assignments")
+        fields = ("id", "trainer")
 
 class StudentsSerializers(serializers.ModelSerializer):
     student = CustomUserSerializer(read_only=True)
