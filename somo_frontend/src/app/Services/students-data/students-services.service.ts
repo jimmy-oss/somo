@@ -1,12 +1,12 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TrainersServicesService {
+export class StudentsServicesService {
 
-  BASE_URL: string = "http://localhost:8000/api/trainers/"
+  BASE_URL: string = "http://localhost:8000/api/students/"
 
   constructor(private http: HttpClient) { }
 
