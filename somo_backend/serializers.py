@@ -2,7 +2,12 @@ from rest_framework import serializers
 from dj_rest_auth.registration.serializers import RegisterSerializer
 from rest_framework import serializers
 
-from .models import Subject, Assignment, SubmitAssignment, Trainer, Student
+from .models import Subject, Assignment, SubmitAssignment, Trainer, Student, CustomUser
+
+class CustomUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        exclude = ["password", "last_login", "is_superuser", "is_staff", "user_permissions", "groups"]
 
 class TrainerCustomRegistrationSerializer(RegisterSerializer):
     trainer = serializers.PrimaryKeyRelatedField(read_only=True,)
@@ -44,7 +49,7 @@ class SubmitAssignmentsSerializer(serializers.ModelSerializer):
 class TrainersSerializers(serializers.ModelSerializer):
     class Meta:
         model = Trainer
-        fields = '__all__'
+        fields = ('username', 'email', )
 
 class StudentsSerializers(serializers.ModelSerializer):
     class Meta:
