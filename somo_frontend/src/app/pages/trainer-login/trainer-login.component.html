@@ -12,12 +12,15 @@
 <section id="signup" class="signup">
   <div class="wrapper">
     <h2>Login</h2>
-    <form action="#">
+    <form #Form="ngForm" (ngSubmit)="LoginTrainer(Form)">
       <div class="input-box">
-        <input type="text" placeholder="Enter your email" required>
+        <input type="text" name="username" placeholder="Enter your username" ngModel required>
       </div>
       <div class="input-box">
-        <input type="password" placeholder="Confirm password" required>
+        <input type="email" name="email" placeholder="Enter your email" ngModel required>
+      </div>
+      <div class="input-box">
+        <input type="password" name="password" placeholder="Enter your password" ngModel required>
       </div>
       <div class="policy">
         <input type="checkbox">
