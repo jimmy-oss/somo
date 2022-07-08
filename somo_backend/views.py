@@ -61,6 +61,18 @@ class StudentsView(APIView):
         except:
             return Response('No students found', status=status.HTTP_404_NOT_FOUND)
 
+class StudentDescriptionView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, pk, format=None):
+        try:
+            student = Student.objects.get(pk=pk)
+            serializers = StudentsSerializers(student)
+            return Response(serializers.data, status=status.HTTP_200_OK)
+
+        except:
+            return Response('No student found', status=status.HTTP_404_NOT_FOUND)
+
 class SubjectsView(APIView):
     permission_classes = [IsAuthenticated]
 

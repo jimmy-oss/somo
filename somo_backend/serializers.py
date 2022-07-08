@@ -31,15 +31,25 @@ class StudentCustomRegistrationSerializer(RegisterSerializer):
         student = Student(student=user, )
         student.save()
         return user
-class SubjectsSerializers(serializers.ModelSerializer):
-    class Meta:
-        model = Subject
-        fields = '__all__'
 
 class AssignmentsSerializer(serializers.ModelSerializer):
+    subject = serializers.SerializerMethodField()
+    trainer = serializers.SerializerMethodField()
     class Meta:
         model = Assignment
         fields = '__all__'
+    
+    def get_subject(self, obj):
+        return obj.subject.name
+
+    def get_trainer(self, obj):
+        return obj.trainer.trainer.username
+
+
+class SubjectsSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Subject
+        fields = "__all__"
 
 class SubmitAssignmentsSerializer(serializers.ModelSerializer):
     class Meta:
@@ -48,12 +58,12 @@ class SubmitAssignmentsSerializer(serializers.ModelSerializer):
 
 class TrainersSerializers(serializers.ModelSerializer):
     trainer = CustomUserSerializer(read_only=True)
-
     class Meta:
         model = Trainer
-        fields = ("id", "trainer", )
+        fields = ("id", "trainer",)
 
 class StudentsSerializers(serializers.ModelSerializer):
+    student = CustomUserSerializer(read_only=True)
     class Meta:
         model = Student
-        fields = '__all__'
+        fields = ("id", "student", )
