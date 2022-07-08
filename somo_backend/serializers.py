@@ -47,9 +47,13 @@ class AssignmentsSerializer(serializers.ModelSerializer):
 
 
 class SubjectsSerializers(serializers.ModelSerializer):
+    trainer = serializers.SerializerMethodField()
     class Meta:
         model = Subject
         fields = "__all__"
+
+    def get_trainer(self, obj):
+        return obj.trainer.trainer.username
 
 class SubmitAssignmentsSerializer(serializers.ModelSerializer):
     class Meta:
