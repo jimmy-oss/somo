@@ -2,7 +2,12 @@ from rest_framework import serializers
 from dj_rest_auth.registration.serializers import RegisterSerializer
 from rest_framework import serializers
 
-from .models import Subject, Assignment, SubmitAssignment, Trainer, Student
+from .models import Subject, Assignment, SubmitAssignment, Trainer, Student, CustomUser
+
+class CustomUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = ('username', 'first_name', 'last_name', 'email', 'is_active', 'is_trainer', 'is_student')
 
 class TrainerCustomRegistrationSerializer(RegisterSerializer):
     trainer = serializers.PrimaryKeyRelatedField(read_only=True,)
@@ -26,15 +31,22 @@ class StudentCustomRegistrationSerializer(RegisterSerializer):
         student = Student(student=user, )
         student.save()
         return user
-class SubjectsSerializers(serializers.ModelSerializer):
-    class Meta:
-        model = Subject
-        fields = '__all__'
 
 class AssignmentsSerializer(serializers.ModelSerializer):
+    subject = serializers.CharField(source='subject.name', read_only=True)
+    trainer = serializers.CharField(source='trainer.trainer.username')
     class Meta:
         model = Assignment
         fields = '__all__'
+
+
+
+class SubjectsSerializers(serializers.ModelSerializer):
+    trainer = serializers.CharField(source='trainer.trainer.username')
+    assignments = AssignmentsSerializer(source='subject_assignments', many=True)
+    class Meta:
+        model = Subject
+        fields = ('id', 'name', 'description','trainer', 'created_at','assignments', )
 
 class SubmitAssignmentsSerializer(serializers.ModelSerializer):
     class Meta:
@@ -42,11 +54,13 @@ class SubmitAssignmentsSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class TrainersSerializers(serializers.ModelSerializer):
+    trainer = CustomUserSerializer(read_only=True)
     class Meta:
         model = Trainer
-        fields = '__all__'
+        fields = ("id", "trainer")
 
 class StudentsSerializers(serializers.ModelSerializer):
+    student = CustomUserSerializer(read_only=True)
     class Meta:
         model = Student
-        fields = '__all__'
+        fields = ("id", "student", )

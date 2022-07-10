@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { CoursesServicesService } from 'src/app/Services/courses/courses-services.service';
 
 @Component({
   selector: 'app-courses',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursesComponent implements OnInit {
 
-  constructor() { }
+  all_courses: any
+
+  constructor(private coursesAPI: CoursesServicesService) { }
 
   ngOnInit(): void {
+    this.coursesAPI.getAllCourses()?.subscribe((data: any) => {
+      this.all_courses = data
+      console.log(this.all_courses)
+    })
   }
 
 }

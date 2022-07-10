@@ -10,6 +10,7 @@ export class TrainerDashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

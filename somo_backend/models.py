@@ -25,13 +25,14 @@ class Student(models.Model):
 class Subject(models.Model):
     trainer = models.ForeignKey(Trainer, on_delete=models.CASCADE)
     name = models.CharField(max_length=50, null=False, blank=False)
+    description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self) -> str:
         return self.name
 
 class Assignment(models.Model):
-    subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
+    subject = models.ForeignKey(Subject, related_name="subject_assignments",on_delete=models.CASCADE)
     trainer = models.ForeignKey(Trainer, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=150, null=False, blank=False)

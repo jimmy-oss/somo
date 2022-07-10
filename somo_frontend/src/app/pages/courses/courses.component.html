@@ -15,26 +15,31 @@
 
       <div class="row" data-aos="zoom-in" data-aos-delay="100">
 
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div *ngIf="all_courses">
+
+        </div>
+
+        <div *ngFor="let course of all_courses; index as i;"
+          class="col-lg-4 col-md-6 d-flex align-items-stretch">
           <div class="course-item">
             <img src="assets/img/course-1.jpg" class="img-fluid" alt="...">
             <div class="course-content">
               <div class="d-flex justify-content-between align-items-center mb-3">
-                <h4>Web Development</h4>
+                <h4>{{ course.name }}</h4>
               </div>
 
-              <h3><a href="course-details.html">Website Design</a></h3>
-              <p>An exam course for Web developers who wants to test their frontend skills and understand how it works.The best web development exam is starting out. Become a UI/UX master from zero to hero!</p>
+              <!-- <h3><a href="course-details.html"></a></h3> -->
+              <p>{{ course.description | slice:0:200 }}...</p>
               <div class="trainer d-flex justify-content-between align-items-center">
                 <div class="trainer-profile d-flex align-items-center">
                   <img src="assets/img/mentor2.jpg" class="img-fluid" alt="">
-                  <span>Walter</span>
+                  <span>{{ course.trainer }}</span>
                 </div>
               </div>
             </div>
           </div>
         </div> <!-- End Course Item-->
-
+<!-- 
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
           <div class="course-item">
             <img src="assets/img/python.jpg" class="img-fluid" alt="...">
@@ -55,7 +60,7 @@
           </div>
         </div> <!-- End Course Item-->
 
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+        <!-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
           <div class="course-item">
             <img src="assets/img/android.png" class="img-fluid" alt="...">
             <div class="course-content">
@@ -73,7 +78,7 @@
               </div>
             </div>
           </div>
-        </div> <!-- End Course Item-->
+        </div> End Course Item --> -->
 
       </div>
 
