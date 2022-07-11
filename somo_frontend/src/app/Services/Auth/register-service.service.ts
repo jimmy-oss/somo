@@ -7,11 +7,12 @@ import { new_trainer } from 'src/app/interfaces/interfaces';
 })
 export class RegisterServiceService {
 
-  BASE_URL: string = 'http://localhost:8000/api/registration/trainer/'
+  BASE_URL: string = 'http://localhost:8000/api/'
 
   constructor(private http: HttpClient) { }
 
   registerTrainer(trainer: new_trainer) {
-    return this.http.post(this.BASE_URL, trainer)
+    return this.http.post(this.BASE_URL + "registration/trainer/", trainer)
   }
+
 }
