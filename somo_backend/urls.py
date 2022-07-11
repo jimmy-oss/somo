@@ -9,6 +9,7 @@ urlpatterns = [
     path('registration/student/', StudentRegistrationView.as_view(), name='register-student'),
     path('all-users/', UsersView.as_view(), name='users'),
     path('current-loggedin-trainer/', CurrentLoggedInTrainerView.as_view(), name='current_logged_in_trainer'),
+    path('current-loggedin-student/', CurrentLoggedInStudentView.as_view(), name='current_logged_in_student'),
     path('trainers/', TrainersView.as_view(), name='trainers'),
     path('trainer/<int:pk>/', TrainerDescriptionView.as_view(), name='trainer'),
     path('students/', StudentsView.as_view(), name='students'),

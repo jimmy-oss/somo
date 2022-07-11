@@ -65,6 +65,21 @@ class TrainerDescriptionView(APIView):
         except:
             return Response('No trainer found', status=status.HTTP_404_NOT_FOUND)
 
+
+class CurrentLoggedInStudentView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, format=None):
+        try:
+            user_id = Token.objects.get(key=request.auth.key).user_id
+            student_email = CustomUser.objects.get(pk=user_id).email
+            student = Student.objects.get(student__email=student_email)
+            serializers = StudentsSerializers(student)
+            return Response(serializers.data, status=status.HTTP_200_OK)
+
+        except:
+            return Response('No student found', status=status.HTTP_404_NOT_FOUND)
+
 class StudentsView(APIView):
     permission_classes = [IsAuthenticated]
 
