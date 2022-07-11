@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TrainersServicesService } from 'src/app/Services/trainers-data/trainers-services.service';
 
 @Component({
   selector: 'app-trainer-dashboard',
@@ -7,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrainerDashboardComponent implements OnInit {
 
-  constructor() { }
+  current_trainer_data: any
+
+  constructor(private trainersAPI: TrainersServicesService) { }
 
   ngOnInit(): void {
-    
+    this.trainersAPI.getCurrentTrainerData().subscribe(data => {
+      this.current_trainer_data = data
+    })
   }
 
 }

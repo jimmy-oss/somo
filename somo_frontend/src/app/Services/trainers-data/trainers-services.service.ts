@@ -27,7 +27,7 @@ export class TrainersServicesService {
     return null
   }
 
-  getCUrrentTrainerData() {
+  getCurrentTrainerData() {
     const users_key = JSON.parse(this.key).key
 
       let header = {
