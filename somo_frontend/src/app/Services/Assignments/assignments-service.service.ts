@@ -1,18 +1,18 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CoursesServicesService {
+export class AssignmentsServiceService {
 
   BASE_URL: string = "http://localhost:8000/api/"
 
-  constructor(private http: HttpClient) { }
-
   key: any = window.localStorage.getItem("user")
 
-  getAllCourses(): any {
+  constructor(private http: HttpClient) { }
+
+  getAllAssignments(): any {
     if (this.key) {
       const users_key = JSON.parse(this.key).key
 
@@ -21,7 +21,7 @@ export class CoursesServicesService {
         .set('Authorization',  `Token ${users_key}`)
       }
 
-      return this.http.get(this.BASE_URL + "subjects/", header)
+      return this.http.get(this.BASE_URL + "assignments/", header)
     }
 
     return null
