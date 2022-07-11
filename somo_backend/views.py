@@ -5,6 +5,8 @@ from .serializers import CustomUserSerializer, StudentsSerializers, SubjectsSeri
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from dj_rest_auth.registration.views import RegisterView
+from rest_framework.authtoken.models import Token
+from .models import CustomUser
 
 
 class TrainerRegistrationView(RegisterView):
@@ -24,6 +26,20 @@ class TrainersView(APIView):
 
         except:
             return Response('No trainers found', status=status.HTTP_404_NOT_FOUND)
+
+class CurrentLoggedInTrainerView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, format=None):
+        try:
+            user_id = Token.objects.get(key=request.auth.key).user_id
+            trainer_email = CustomUser.objects.get(pk=user_id).email
+            trainer = Trainer.objects.get(trainer__email=trainer_email)
+            serializers = TrainersSerializers(trainer)
+            return Response(serializers.data, status=status.HTTP_200_OK)
+
+        except:
+            return Response('No trainer found', status=status.HTTP_404_NOT_FOUND)
 
 class UsersView(APIView):
     permission_classes = [IsAuthenticated]

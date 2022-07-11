@@ -7,7 +7,7 @@ from .models import Subject, Assignment, SubmitAssignment, Trainer, Student, Cus
 class CustomUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = ('username', 'first_name', 'last_name', 'email', 'is_active', 'is_trainer', 'is_student')
+        fields = ('id', 'username', 'first_name', 'last_name', 'email', 'is_active', 'is_trainer', 'is_student')
 
 class TrainerCustomRegistrationSerializer(RegisterSerializer):
     trainer = serializers.PrimaryKeyRelatedField(read_only=True,)
@@ -55,9 +55,11 @@ class SubmitAssignmentsSerializer(serializers.ModelSerializer):
 
 class TrainersSerializers(serializers.ModelSerializer):
     trainer = CustomUserSerializer(read_only=True)
+    subjects = SubjectsSerializers(source="subject_set", many=True)
+    assignments = AssignmentsSerializer(source='assignment_set', many=True)
     class Meta:
         model = Trainer
-        fields = ("id", "trainer")
+        fields = ("id", "trainer", "subjects","assignments")
 
 class StudentsSerializers(serializers.ModelSerializer):
     student = CustomUserSerializer(read_only=True)
