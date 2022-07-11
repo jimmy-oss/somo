@@ -29,7 +29,6 @@ export class HomeComponent implements OnInit {
     })
 
     this.trainersAPI.getTrainers().subscribe((data: any) => {
-      console.log(data)
       this.total_trainers = data.length
     })
   }

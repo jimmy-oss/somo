@@ -29,7 +29,7 @@
        <li class="nav-item dropdown pe-3">
          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
            <img src="https://source.unsplash.com/300x300/?student" alt="Profile" class="rounded-circle">
-           <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+           <span class="d-none d-md-block dropdown-toggle ps-2">{{ current_student.student.username }}</span>
          </a>
            </li>
            <li>
@@ -49,7 +49,7 @@
      </li><!-- End Dashboard Nav -->
      <li class="nav-item">
        <a class="nav-link collapsed" href="../student-quiz">
-         <i class="bi bi-menu-button-wide"></i><span>Examination</span>  
+         <i class="bi bi-menu-button-wide"></i><span>Courses</span>  
        </a>
      <li class="nav-item">
        <a class="nav-link collapsed" href="../student-results">
@@ -57,7 +57,7 @@
        </a>
        <!-- End Forms Nav -->
      <li class="nav-item">
-       <a class="nav-link collapsed" href="index.html">
+       <a class="nav-link collapsed" href="" (click)="logout_user()">
          <i class="bi bi-box-arrow-in-right"></i>
          <span>LogOut</span>
        </a>
@@ -82,13 +82,13 @@
            <div class="col-xxl-4 col-md-6">
              <div class="card info-card exams-card">
                <div class="card-body">
-                 <h5 class="card-title"><a href="../student-quiz">Available Exams</a></h5>
+                 <h5 class="card-title"><a href="../student-quiz">Available Courses</a></h5>
                  <div class="d-flex align-items-center">
                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                      <i class="bi bi-menu-button-wide"></i>
                    </div>
                    <div class="ps-3">
-                     <h6>1</h6>
+                     <h6>{{ all_courses }}</h6>
                    </div>
                  </div>
                </div>
@@ -103,7 +103,7 @@
                      <i class="bi bi-journal-text"></i>
                    </div>
                    <div class="ps-3">
-                     <h6>4</h6>
+                     <h6>{{ all_assignments }}</h6>
                    </div>
                  </div>
                </div>

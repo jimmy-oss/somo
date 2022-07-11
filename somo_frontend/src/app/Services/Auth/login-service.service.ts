@@ -14,4 +14,8 @@ export class LoginServiceService {
   loginTrainer(trainer: user_login_data) {
     return this.http.post<any>(this.BASE_URL, trainer)
   }
+
+  loginStudent(student: user_login_data) {
+    return this.http.post<any>(this.BASE_URL, student)
+  }
 }

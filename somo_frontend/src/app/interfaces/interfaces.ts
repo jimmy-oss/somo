@@ -1,4 +1,4 @@
-export interface new_trainer {
+export interface new_user {
     username: string;
     email: string;
     password1: string;
