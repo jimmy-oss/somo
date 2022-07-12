@@ -303,6 +303,14 @@ section {
   border: 1px solid #eef0ef;
   text-decoration: none;
 }
+.img-py{
+  width:363px;
+  height:242px;
+}
+.img-android{
+  width:363px;
+  height:242px;
+}
 .courses .course-content {
   padding: 15px;
   text-decoration: none;
@@ -368,6 +376,10 @@ section {
   margin-bottom: 20px;
   background: #fff;
   border: 1px solid #eef0ef;
+}
+.sarah{
+  width:365px;
+  height:362px;
 }
 .trainers .member img {
   margin: -1px -1px 30px -1px;

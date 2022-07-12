@@ -2,9 +2,9 @@
 <main id="main" data-aos="fade-in">
   <!-- ======= Breadcrumbs ======= -->
   <div class="breadcrumbs">
-    <div class="container">
-      <h2>Trainers Portal</h2>
-      <p style="margin-top: -2rem;"><img src="assets/img/somo.svg" alt="" width="100px"> Stay updated on your Somo Solutions account and explore</p>
+    <div class="container text-center">
+      <h2>Trainers Login</h2>
+      <p> Stay updated on your Somo Solutions account and explore</p>
     </div>
   </div><!-- End Breadcrumbs -->
   <br><br><br>
@@ -12,12 +12,15 @@
 <section id="signup" class="signup">
   <div class="wrapper">
     <h2>Login</h2>
-    <form action="#">
+    <form #Form="ngForm" (ngSubmit)="LoginTrainer(Form)">
       <div class="input-box">
-        <input type="text" placeholder="Enter your email" required>
+        <input type="text" name="username" placeholder="Enter your username" ngModel required>
       </div>
       <div class="input-box">
-        <input type="password" placeholder="Confirm password" required>
+        <input type="email" name="email" placeholder="Enter your email" ngModel required>
+      </div>
+      <div class="input-box">
+        <input type="password" name="password" placeholder="Enter your password" ngModel required>
       </div>
       <div class="policy">
         <input type="checkbox">
