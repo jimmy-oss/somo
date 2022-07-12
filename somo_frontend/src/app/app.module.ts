@@ -26,6 +26,10 @@ import { TrainerLoginComponent } from './pages/trainer-login/trainer-login.compo
 import { StudentQuizComponent } from './pages/student-quiz/student-quiz.component';
 import { StudentResultsComponent } from './pages/student-results/student-results.component';
 import { TrainerQuestionersComponent } from './pages/trainer-questioners/trainer-questioners.component';
+import { StudentQuiz1Component } from './pages/student-quiz1/student-quiz1.component';
+import { StudentQuiz2Component } from './pages/student-quiz2/student-quiz2.component';
+import { StudentQuiz3Component } from './pages/student-quiz3/student-quiz3.component';
+import { StudentQuiz4Component } from './pages/student-quiz4/student-quiz4.component';
  
  
  
@@ -52,6 +56,10 @@ import { TrainerQuestionersComponent } from './pages/trainer-questioners/trainer
     StudentQuizComponent,
     StudentResultsComponent,
     TrainerQuestionersComponent,
+    StudentQuiz1Component,
+    StudentQuiz2Component,
+    StudentQuiz3Component,
+    StudentQuiz4Component,
  
   ],
   imports: [

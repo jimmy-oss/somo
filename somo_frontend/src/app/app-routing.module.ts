@@ -17,6 +17,10 @@ import { TrainerLoginComponent } from './pages/trainer-login/trainer-login.compo
 import { TrainerRegistrationComponent } from './pages/trainer-registration/trainer-registration.component';
 import { StudentQuizComponent } from './pages/student-quiz/student-quiz.component';
 import { StudentResultsComponent } from './pages/student-results/student-results.component';
+import { StudentQuiz1Component } from './pages/student-quiz1/student-quiz1.component';
+import { StudentQuiz2Component } from './pages/student-quiz2/student-quiz2.component';
+import { StudentQuiz3Component } from './pages/student-quiz3/student-quiz3.component';
+import { StudentQuiz4Component } from './pages/student-quiz4/student-quiz4.component';
  
  
 
@@ -38,6 +42,10 @@ const routes: Routes = [
   {path:'trainer-questioners',component:TrainerQuestionersComponent},
   {path:'student-quiz',component:StudentQuizComponent},
   {path:'student-result',component:StudentResultsComponent},
+  {path:'student-quiz1',component:StudentQuiz1Component},
+  {path:'student-quiz2',component:StudentQuiz2Component},
+  {path:'student-quiz3',component:StudentQuiz3Component},
+  {path:'student-quiz4',component:StudentQuiz4Component},
 
 ];
 
