@@ -21,23 +21,23 @@ color: red;
 }
 .title-div{
 	height: 150px;
-	width: 650px;
+	width: 550px;
 	background-color: #FDFEFE;
 	margin: 15px;
 	border-radius: 8px;
-	border-top: 8px solid #6703c4;
+	border-top: 8px solid #5fcf80;
 	padding: 28px;
 }
 .name-div, .anchor-div, .semantic-div{
-	height: 180px;
-	width: 650px;
+	height: 150px;
+	width: 550px;
 	background-color: #FDFEFE;
 	margin: 15px;
 	border-radius: 8px;
 }
 .css-div{
-    height: 250px;
-	width: 650px;
+  height: 150px;
+	width: 550px;
 	background-color: #FDFEFE;
 	margin: 15px;
 	border-radius: 8px;

@@ -77,75 +77,83 @@
 
       </div>
     </section><!-- End Counts Section -->
-     <!-- ======= Popular Courses Section ======= -->
-  <section id="popular-courses" class="courses">
-    <div class="container" data-aos="fade-up">
+<!-- ======= Popular Courses Section ======= -->
+<section id="popular-courses" class="courses">
+  <div class="container" data-aos="fade-up">
 
-      <div *ngIf="top_courses" class="row" data-aos="zoom-in" data-aos-delay="100">
+    <div class="row" data-aos="zoom-in" data-aos-delay="100">
 
-        <div *ngFor="let course of top_courses; index as i;" class="col-lg-4 col-md-6 d-flex align-items-stretch">
-          <div class="course-item">
-            <img src="assets/img/course-1.jpg" class="img-fluid" alt="...">
-            <div class="course-content">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <h4>{{ course.name }}</h4>
-              </div>
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="course-item">
+          <img src="assets/img/course-1.jpg" class="img-fluid" alt="...">
+          <div class="course-content">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h4>Web Development</h4>
+            </div>
 
-              <p>{{ course.description | slice:0:200 }}...</p>
-              <div class="trainer d-flex justify-content-between align-items-center">
-                <div class="trainer-profile d-flex align-items-center">
-                  <img src="assets/img/mentor2.jpg" class="img-fluid" alt="">
-                  <span>{{ course.trainer }}</span>
-                </div>
+            <h3><a href="course-details.html">Website Development</a></h3>
+            <p>Web development is the building and maintenance of websites; 
+              it's the work that happens behind the scenes to make a website look great, 
+              work fast and perform well with a seamless user experience. 
+              Web developers, or 'devs', do this by using a variety of coding languages</p>
+            <div class="trainer d-flex justify-content-between align-items-center">
+              <div class="trainer-profile d-flex align-items-center">
+                <img src="assets/img/mentor2.jpg" class="img-fluid" alt="">
+                <span>Walter</span>
               </div>
             </div>
           </div>
-        </div> <!-- End Course Item-->
+        </div>
+      </div> <!-- End Course Item-->
 
-        <!-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-          <div class="course-item">
-            <img src="assets/img/python.jpg" class="img-fluid" alt="...">
-            <div class="course-content">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <h4>Python Clash Course</h4>
-              </div>
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+        <div class="course-item">
+          <img src="assets/img/python.jpg" class="img-py" alt="..." >
+          <div class="course-content">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h4>Python Clash Course</h4>
+            </div>
 
-              <h3><a href="course-details.html">Data Structures and algorithms</a></h3>
-              <p>An exam course for Python developers who wants to test their data structures skills and understand how it works.Become a Python master from zero to hero! </p>
-              <div class="trainer d-flex justify-content-between align-items-center">
-                <div class="trainer-profile d-flex align-items-center">
-                  <img src="assets/img/mentor3.jpg" class="img-fluid" alt="">
-                  <span>Sarah</span>
-                </div>
+            <h3><a href="course-details.html">Python Development</a></h3>
+            <p>Python developers are responsible for writing server-side web application logic. 
+              They typically develop back-end components, connect the application with third-party web services, 
+              and support the front-end developers by integrating their work with the Python application. </p>
+            <div class="trainer d-flex justify-content-between align-items-center">
+              <div class="trainer-profile d-flex align-items-center">
+                <img src="assets/img/mentor3.jpg" class="img-fluid" alt="">
+                <span style="margin-top:2rem;">Sarah</span>
               </div>
             </div>
           </div>
-        </div> <!-- End Course Item-->
+        </div>
+      </div> <!-- End Course Item-->
 
-        <!-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-          <div class="course-item">
-            <img src="assets/img/android.png" class="img-fluid" alt="...">
-            <div class="course-content">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <h4 style="margin-top: 4rem;">Android</h4>
-              </div>
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+        <div class="course-item">
+          <img src="assets/img/android.png" class="img-android" alt="...">
+          <div class="course-content">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h4 >Android</h4>
+            </div>
 
-              <h3 style="margin-top: 1rem;"><a href="course-details.html">Android Bootcamp</a></h3>
-              <p style="margin-top: 1rem;">An exam course for Android developers who wants to test their frontend and backend skills and understand how it works.Become an Android master from zero to hero!</p>
-              <div class="trainer d-flex justify-content-between align-items-center">
-                <div class="trainer-profile d-flex align-items-center" >
-                  <img src="assets/img/mentor1.png" class="img-fluid" alt="">
-                  <span>Lagat</span>
-                </div>
+            <h3><a href="course-details.html">Android Development</a></h3>
+            <p >Android software development is the process by which applications are created for devices running the Android operating system.
+               Google states that "Android apps can be written using Kotlin, Java, and C++ languages" using the Android software development kit (SDK). 
+                </p>
+            <div class="trainer d-flex justify-content-between align-items-center">
+              <div class="trainer-profile d-flex align-items-center" >
+                <img src="assets/img/mentor1.png" class="img-fluid" alt="">
+                <span>Sharon</span>
               </div>
             </div>
           </div>
-        </div> End Course Item --> -->
-
-      </div>
+        </div>
+      </div> <!-- End Course Item-->
 
     </div>
-  </section><!-- End Popular Courses Section -->
+
+  </div>
+</section><!-- End Popular Courses Section -->
     <!-- ======= Trainers Section ======= -->
     <section id="trainers" class="trainers">
       <div class="container" data-aos="fade-up">
@@ -172,7 +180,7 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
-              <img src="assets/img/mentor3.jpg" class="img-fluid" alt="">
+              <img src="assets/img/mentor3.jpg" class="sarah" alt="">
               <div class="member-content">
                 <h4>Sarah Wanjiru</h4>
                 <span>Data Scientist</span>
@@ -193,7 +201,7 @@
             <div class="member">
               <img src="assets/img/mentor1.png" class="img-fluid" alt="">
               <div class="member-content">
-                <h4>Jepngetich Lagat</h4>
+                <h4>Sharon Njoki</h4>
                 <span>Android</span>
                 <p>
                   Fantastic mentorship and a great lady. We recommend anyone who needs to become an android engineer or anyone who wants to improve their skills.She delivers exactly what you want from Zero to Hero!

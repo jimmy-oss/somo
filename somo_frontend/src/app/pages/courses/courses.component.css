@@ -25,6 +25,14 @@
   border-radius: 5px;
   border: 1px solid #eef0ef;
 }
+.img-py{
+  width:363px;
+  height:242px;
+}
+.img-android{
+  width:363px;
+  height:242px;
+}
 .courses .course-content {
   padding: 15px;
 }
