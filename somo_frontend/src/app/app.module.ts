@@ -22,6 +22,7 @@ import { TrainerLoginComponent } from './pages/trainer-login/trainer-login.compo
 import { StudentQuizComponent } from './pages/student-quiz/student-quiz.component';
 import { StudentResultsComponent } from './pages/student-results/student-results.component';
 import { TrainerQuestionersComponent } from './pages/trainer-questioners/trainer-questioners.component';
+import { CourseFormComponent } from './pages/course-form/course-form.component';
  
  
 
@@ -47,6 +48,7 @@ import { TrainerQuestionersComponent } from './pages/trainer-questioners/trainer
     StudentQuizComponent,
     StudentResultsComponent,
     TrainerQuestionersComponent,
+    CourseFormComponent,
   ],
   imports: [
     BrowserModule,

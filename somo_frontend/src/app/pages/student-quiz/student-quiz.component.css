@@ -25,7 +25,7 @@ color: red;
 	background-color: #FDFEFE;
 	margin: 15px;
 	border-radius: 8px;
-	border-top: 8px solid #6703c4;
+	border-top: 8px solid #5fcf80;
 	padding: 28px;
 }
 .name-div, .anchor-div, .semantic-div{
@@ -36,7 +36,7 @@ color: red;
 	border-radius: 8px;
 }
 .css-div{
-    height: 250px;
+  height: 250px;
 	width: 650px;
 	background-color: #FDFEFE;
 	margin: 15px;
@@ -62,7 +62,7 @@ color: red;
 .btn{
 	height: 36px;
 	width: 100px;
-	background-color: #6703c4;
+	background-color: #5fcf80;
 	border-radius: 5px;
 	font-size: 14px;
 	letter-spacing: .5px;

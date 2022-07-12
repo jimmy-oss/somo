@@ -17,6 +17,7 @@ import { TrainerLoginComponent } from './pages/trainer-login/trainer-login.compo
 import { TrainerRegistrationComponent } from './pages/trainer-registration/trainer-registration.component';
 import { StudentQuizComponent } from './pages/student-quiz/student-quiz.component';
 import { StudentResultsComponent } from './pages/student-results/student-results.component';
+import { CourseFormComponent } from './pages/course-form/course-form.component';
  
 
 const routes: Routes = [
@@ -37,6 +38,7 @@ const routes: Routes = [
   {path:'trainer-questioners',component:TrainerQuestionersComponent},
   {path:'student-quiz',component:StudentQuizComponent},
   {path:'student-result',component:StudentResultsComponent},
+  {path:'course-form',component:CourseFormComponent},
 ];
 
 @NgModule({

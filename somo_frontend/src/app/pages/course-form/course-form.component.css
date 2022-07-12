@@ -1,0 +1,56 @@
+body{
+	background-color: #ede7f6;
+	font-family: Roboto,Sans-serif;
+}
+.title-div{
+	height: 150px;
+	width: 650px;
+	background-color: #FDFEFE;
+	margin: 15px;
+	border-radius: 8px;
+	border-top: 8px solid #6703c4;
+  margin-left: 26rem;
+	padding: 28px;
+}
+.title-div p{
+  font-size: 15px;
+  margin-left: -8rem;
+}
+.quiz-div{
+  height: 200px;
+	width: 650px;
+	background-color: #FDFEFE;
+	margin: 15px;
+	border-radius: 8px;
+  margin-left: 26rem;
+}
+#courses{
+  height: 20%;
+  width: 50%;
+  margin-top:3rem;
+  outline: none;
+  padding:1px;
+  font-size: 17px;
+  font-weight: 400;
+  color: #69707a;
+  border: 1.5px solid #C7BEBE;
+  }
+  .btn{
+    height: 36px;
+    width: 100px;
+    background-color: #6703c4;
+    border-radius: 5px;
+    font-size: 14px;
+    letter-spacing: .5px;
+    font-weight: 540;
+    border: none;
+    padding: 10px;
+    position: absolute;
+    margin: 15px;
+    color: white;
+  }
+  ::placeholder{
+    color:white;
+  }
+   
+   
