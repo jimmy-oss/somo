@@ -63,11 +63,11 @@ color: red;
 	border-radius: 8px;
 }
 .quiz-div{
-  height: 150px;
-	width: 550px;
-	background-color: #FDFEFE;
-	margin: 15px;
-	border-radius: 8px;
+  height: auto;
+  max-width: 550px;
+  background-color: #FDFEFE;
+  margin: 15px;
+  border-radius: 8px;
 }
 .css-div{
  height: 250px;

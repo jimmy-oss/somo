@@ -1,0 +1,42 @@
+ <body>
+   <br><br><br><br><br><br><br><br>
+   <form action="">
+     <div class="form">
+       <button class="back"><a href="../student-dashboard" style="text-decoration: none; color:white">Go
+           back</a></button>
+       <br><br>
+       <div class="title-div">
+         <h1>Total Assignments</h1>
+         <p>
+           These are all the assignments available at the moment
+         </p>
+       </div>
+       <div class="quiz-div">
+         <ol>
+           <div *ngFor="let assignment of all_assignments">
+             <li>
+               <div style="font-size:18px; margin-left:2rem; margin-top:2rem;">
+                 <a href="" style="text-decoration: none;">{{ assignment.title }}</a>
+                 <small class="float-end me-2"> by @{{ assignment.trainer }}</small>
+                
+                 <br>
+                 <small>Course: {{ assignment.subject }}</small>
+
+                 <p style="margin-top:2rem;">
+                    {{assignment.description}}
+                 </p>
+
+                 <small>
+                    Deadline: {{assignment.deadline | date}}
+                 </small>
+
+               </div>
+             </li>
+           </div>
+         </ol>
+       </div>
+       <div>
+       </div>
+     </div>
+   </form>
+ </body>
