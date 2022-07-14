@@ -8,7 +8,8 @@
   </div>
 </div><!-- End Breadcrumbs --> 
 <br><br><br>
- <div class="wrapper">
+ <section id="signup">
+  <div class="wrapper">
     <h2>Register</h2>
     <form #Form="ngForm" (ngSubmit)="registerStudent(Form)">
       <div class="input-box">
@@ -31,11 +32,12 @@
         <input type="Submit" value="Register Now" style="background-color: #5fcf80; color:white;">
       </div>
       <div class="text">
-        <h3>Already have an account? <a class="nav-link" routerLink="../login"
-            routerLinkActive="active-link">Login now</a></h3>
+        <h3>Already have an account? <a class="nav-link" routerLink="../login" routerLinkActive="active-link">Login
+            now</a></h3>
       </div>
     </form>
   </div>
+ </section>
 </main>
 <br><br><br>
  

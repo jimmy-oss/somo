@@ -7,27 +7,39 @@
     <h1 style="margin-left: 12rem;">ADD QUESTIONS ?</h1>
     <p style="margin-left: 6rem; font-size:17px;">Make sure to finish setting up the questions</p>
   </div>
-  <div class="quiz-div">
+  <!-- <div class="quiz-div">
     <label for="courses" style="font-size: 15px; margin-left:3rem;">Choose Course:</label>
     <select id="courses" name="marks" style="margin-left: 2rem;">
       <option value="Web Development">Web Development</option>
       <option value="Python Development">Python Development</option>
       <option value="Android Development">Android Development</option>
     </select>
-  </div>
+  </div> -->
   <div class="quiz-div">
-    <p style="font-size:18px; margin-left:10rem;" ><a href="../trainer-questioners1" style="text-decoration: none;">Question 1</a></p>
+    <ol>
+      <div *ngFor="let assignment of all_assignments">
+        <li>
+          <div style="font-size:18px; margin-left:2rem; margin-top:2rem;">
+            <a href="../trainer-questioners1" style="text-decoration: none;">{{ assignment.title }}</a>
+
+            <small class="float-end me-2"> by @{{ assignment.trainer }}</small>
+            <br>
+
+            <small>
+              {{ assignment.description }}
+            </small>
+            
+            <br>
+            <small>
+              Deadline: {{ assignment.deadline | date }}
+            </small>
+          </div>
+        </li>
+      </div>
+    </ol>
   </div>
-  <div class="quiz-div">
-    <p style="font-size:18px; margin-left:10rem;" ><a href="../trainer-questioners2" style="text-decoration: none;">Question 2</a></p>
-  </div>
-  <div class="quiz-div">
-    <p style="font-size:18px; margin-left:10rem;" ><a href="../trainer-questioners3" style="text-decoration: none;">Question 3</a></p>
-  </div>
-    <div class="quiz-div">
-      <p style="font-size:18px; margin-left:10rem;" ><a href="../trainer-questioners4" style="text-decoration: none;">Question 4</a></p>
-    </div>
-    </div>
+
+</div>
   <br><br><br><br><br> 
   <br><br><br><br><br>
   <br><br><br><br><br> 

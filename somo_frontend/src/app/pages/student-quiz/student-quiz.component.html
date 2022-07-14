@@ -5,26 +5,28 @@
 		<button class="back"><a href="../student-dashboard" style="text-decoration: none; color:white">Go back</a></button>  
 		<br><br> 
 		<div class="title-div">
-			<h1>HTML and CSS Quiz</h1>
-			<p>Make sure to fill  in the questions</p>
-			<p class="required">*Required</p>
+			<h1>Total Courses</h1>
+			<p>
+				These are all the courses available at the moment
+			</p>
 		</div>
-		<div class="name-div">
-			<div class="name"><a href="../student-quiz1" style="text-decoration: none;">Question 1 ?</a><span class="required">*</span></div>  
-		</div>
-		<div class="css-div">
-			<div class="name"><a href="../student-quiz2" style="text-decoration: none;">Question 2 ?</a><span class="required">*</span></div>  
-		</div>
-		<div class="anchor-div">
-			<div class="name"><a href="../student-quiz3/" style="text-decoration: none;">Question 3 ?</a><span class="required">*</span></div>   
-		</div>
-		<div class="semantic-div">
-			<div class="name"><a href="../student-quiz4" style="text-decoration: none;">Question 4 ?</a><span class="required">*</span></div>   
+		<div class="quiz-div">
+		  <ol>
+		    <div *ngFor="let course of all_courses">
+		      <li>
+		        <div style="font-size:18px; margin-left:2rem; margin-top:2rem;">
+		          <a href="" style="text-decoration: none;">{{ course.name }}</a>
+
+		          <small class="float-end me-2"> by @{{ course.trainer }}</small>
+		        </div>
+		      </li>
+		    </div>
+		  </ol>
 		</div>
 		<div>
 		</div>
 	</div>
 </form>
-    </body>
+</body>
  
  

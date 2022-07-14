@@ -22,9 +22,15 @@
 }
 /* Signin page
 */
+
+#signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
  
 .wrapper{
-  margin-left: 40rem;
   position: relative;
   max-width: 430px;
   width: 100%;

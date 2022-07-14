@@ -25,6 +25,8 @@ import { StudentQuiz2Component } from './pages/student-quiz2/student-quiz2.compo
 import { StudentQuiz3Component } from './pages/student-quiz3/student-quiz3.component';
 import { StudentQuiz4Component } from './pages/student-quiz4/student-quiz4.component';
 import { StudentResultsComponent } from './pages/student-results/student-results.component';
+import { AddCourseComponent } from './pages/add-course/add-course.component';
+import { AllAssignmentsComponent } from './pages/all-assignments/all-assignments.component';
  
  
  
@@ -38,6 +40,8 @@ const routes: Routes = [
   {path:'registration',component:RegistrationComponent},
   {path:'login',component:LoginComponent},
   {path:'admin',component:AdminComponent},
+  {path:'add-course',component:AddCourseComponent},
+   {path:'all-assignments',component:AllAssignmentsComponent},
   {path:'student-profile',component:StudentProfileComponent},
   {path:'trainer-profile',component:TrainerProfileComponent},
   {path:'student-dashboard',component:StudentDashboardComponent},

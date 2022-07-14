@@ -34,6 +34,8 @@ import { TrainerQuestioners1Component } from './pages/trainer-questioners1/train
 import { TrainerQuestioners2Component } from './pages/trainer-questioners2/trainer-questioners2.component';
 import { TrainerQuestioners3Component } from './pages/trainer-questioners3/trainer-questioners3.component';
 import { TrainerQuestioners4Component } from './pages/trainer-questioners4/trainer-questioners4.component';
+import { AddCourseComponent } from './pages/add-course/add-course.component';
+import { AllAssignmentsComponent } from './pages/all-assignments/all-assignments.component';
  
  
  
@@ -68,6 +70,8 @@ import { TrainerQuestioners4Component } from './pages/trainer-questioners4/train
     TrainerQuestioners2Component,
     TrainerQuestioners3Component,
     TrainerQuestioners4Component,
+    AddCourseComponent,
+    AllAssignmentsComponent,
  
   ],
   imports: [
