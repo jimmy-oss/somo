@@ -10,8 +10,8 @@ Our Somo Solutions Platform build with intelligence and design 🏫
 
 # DESCRIPTION &#127800;
 
-The website mainly focuses on Somo Solutions Platform is a web application where teachers can provide
-assignments of different Subjects to their students. Students can then view their assignments, work on them and later submit them on their respective teachers.   
+The website mainly focuses on Somo Solutions Platform is a web application where trainers can provide
+assignments of different Subjects to their students. Students can then view their assignments, work on them and later submit them on their respective trainers.   
 
 # Contributors &#129409;
 
@@ -25,7 +25,7 @@ assignments of different Subjects to their students. Students can then view thei
 
 # BEHAVIOUR DRIVEN DEVELOPMENT 😇
 
-The Website system provide assignments of different Subjects to their students. Students can then view their assignments, work on them and later submit them on their respective teachers.   
+The Website system provide assignments of different Subjects to their students. Students can then view their assignments, work on them and later submit them on their respective trainers.   
 
 # INSTALLATION PROCESS ✨
 
