@@ -44,9 +44,9 @@ Create an `.env` and add the following.
 
 ```
 SECRET_KEY='<Secret_key>'
-DBNAME='<DbName>'
-USER='<Username>'
-PASSWORD='<password>'
+DB_NAME='<DbName>'
+DB_USER='<Username>'
+DB_PASSWORD='<password>'
 DEBUG=True
 DB_HOST='127.0.0.1'
 MODE='dev'
